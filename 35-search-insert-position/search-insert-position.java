@@ -13,12 +13,7 @@ class Solution {
                 return mid;
             }
         }
-        if(l>r){
-            return l;
-        }
-        else{
-            return r;
-        }
-        //return mid+1;
+       
+        return l;
     }
 }
