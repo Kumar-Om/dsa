@@ -3,26 +3,26 @@ class Solution {
         int l=0,r=nums.length-1,mid=0;
         while(l<=r){
             mid=(l+r)/2;
-            if(nums[mid]==target){
+            if(nums[mid]==target){ 
                 return true;
             }
             else if(nums[l]==nums[mid] && nums[r]==nums[mid]){
                 l++;r--;
                 continue;
             }
-            else if(nums[l]<=nums[mid]){
-                if(target>=nums[l] && target<=nums[mid]){
+            else if(nums[l]<=nums[mid]){ //left sorted
+                if(target>=nums[l] && target<=nums[mid]){  //lies within left sorted
                     r=mid-1;
                 }
-                else{
+                else{ //if not
                     l=mid+1;
                 }
             }
-            else{
-                if(target<=nums[r]&&target>=nums[mid]){
+            else{ //right sorted
+                if(target<=nums[r]&&target>=nums[mid]){  //lies within right sorted
                     l=mid+1;
                 }
-                else{
+                else{ //if not
                     r=mid-1;
                 }
             }
